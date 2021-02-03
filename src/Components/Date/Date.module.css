@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+.container{
+    width: 690px;
+    height: 383px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.text{
+    font-size: 16px;
+    font-family: Montserrat;
+    padding-bottom: 18px;
+    font-style: normal;
+    color: #828282;
+    font-weight: 800;
+}
+.dateContainer{
+    width: 292px;
+
+}

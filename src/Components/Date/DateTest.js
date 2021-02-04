@@ -20,6 +20,8 @@ function DateTest() {
     setError(null);
   }, [time.startDateTime]);
 
+  // eslint-disable-next-line no-console
+  console.log('time', time.startDateTime);
   const getError = (field) => {
     const errors = {
       startDateTime: 'Start date name is required',
@@ -45,20 +47,16 @@ function DateTest() {
         <Box>
           <MuiPickersUtilsProvider utils={DateUtils}>
             <DateTimePicker
+              autoOk={false}
               clearable
               ampm
               disablePast
               fullWidth
-            // error={getError('startDateTime') !== false}
-            // helperText={getError('startDateTime')}
-            //   value={selectedDate}
-            //   onChange={handleDateChange}
               helperText={getError('startDateTime')}
               value={time.startDateTime}
               onChange={(date) => setEvent({ ...time, startDateTime: date })}
             />
           </MuiPickersUtilsProvider>
-
         </Box>
       </Box>
       <Box className={styles.dateContainer}>
@@ -71,6 +69,8 @@ function DateTest() {
               clearable
               ampm
               disablePast
+              // eslint-disable-next-line no-unneeded-ternary
+              disabled={time.startDateTime === null ? true : false}
               fullWidth
               error={getError('endDateTime') !== false}
               helperText={getError('endDateTime')}
